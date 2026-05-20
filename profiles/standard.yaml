@@ -1,0 +1,49 @@
+# ============================================================
+# Deployment Profile — Standard Milvus
+# Open-source Milvus: Lite, Standalone, or Distributed
+# ============================================================
+
+id: standard
+label: Standard Milvus
+description: >
+  Open-source Milvus running as Lite, Standalone, or Distributed.
+  Full feature set available. No managed-service restrictions.
+  Resource limits reflect upstream Milvus defaults.
+
+connectivity:
+  auth_format: username_password  # or none for dev; token supported
+  tls_required: false             # true for remote; false for localhost
+  grpc_message_size_limit_mb: 64  # Milvus default
+  deprecated_auth_forms: []       # no deprecated forms in open-source
+
+indexes:
+  available_index_types:
+    - HNSW
+    - IVF_FLAT
+    - IVF_SQ8
+    - IVF_PQ
+    - SCANN
+    - DISKANN      # requires Milvus >=2.3 + fast NVMe
+    - FLAT
+    - AUTOINDEX
+    - GPU_IVF_FLAT  # requires CUDA hardware
+    - GPU_CAGRA     # requires CUDA hardware
+    - GPU_BRUTE_FORCE # requires CUDA hardware
+  default_index_type: HNSW
+  default_metric_type: COSINE
+  restricted_index_types: []  # no restrictions
+
+search_capabilities:
+  milvus_version: latest        # operator should pin to actual version
+  text_similarity_search_available: false  # true only if Milvus >=2.6
+  hybrid_search_available: true
+  grouping_search_available: true
+  partition_key_isolation_available: true  # requires Milvus >=2.4
+
+resource_limits:
+  max_insert_batch_mb: 64       # Milvus default gRPC message size
+  max_topk: 16384
+  max_databases: 64
+  max_collections: 65536
+  max_partitions_per_collection: 4095
+  starter_scaling_disabled: false

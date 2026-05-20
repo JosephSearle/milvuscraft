@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "milvus",
+  "displayName": "Milvus",
+  "version": "1.0.0",
+  "description": "12 skills for creating, optimising, managing, debugging, and operating Milvus vector databases. Supports Standard Milvus, IBM Cloud (watsonx.data), and Zilliz Cloud.",
+  "author": { "name": "Joseph Searle" },
+  "repository": "https://github.com/JosephSearle/milvus-plugin",
+  "license": "MIT",
+  "keywords": ["milvus", "vector-database", "rag", "embeddings"],
+  "userConfig": {
+    "milvus_uri": {
+      "type": "string",
+      "title": "Milvus URI",
+      "description": "Connection URI for your Milvus instance (e.g. http://localhost:19530 or https://host:19530)",
+      "required": true
+    },
+    "milvus_token": {
+      "type": "string",
+      "title": "Milvus Token",
+      "description": "Auth token (username:password for self-hosted, API key for cloud). Leave empty for no-auth dev deployments.",
+      "sensitive": true
+    },
+    "milvus_db": {
+      "type": "string",
+      "title": "Database name",
+      "description": "Milvus database to connect to",
+      "default": "default"
+    },
+    "deployment_profile": {
+      "type": "string",
+      "title": "Deployment profile",
+      "description": "One of: standard (open-source Milvus Lite/Standalone/Distributed), ibm_cloud (watsonx.data), zilliz_cloud, or custom",
+      "required": true,
+      "default": "standard"
+    }
+  }
+}

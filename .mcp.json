@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "milvus": {
+      "command": "uvx",
+      "args": ["mcp-server-milvus"],
+      "env": {
+        "MILVUS_URI": "${user_config.milvus_uri}",
+        "MILVUS_TOKEN": "${user_config.milvus_token}",
+        "MILVUS_DB": "${user_config.milvus_db}"
+      }
+    }
+  }
+}
