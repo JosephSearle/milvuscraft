@@ -1,4 +1,4 @@
-# Milvus
+# MilvusCraft
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Claude Code Plugin](https://img.shields.io/badge/Claude%20Code-Plugin-blueviolet)](https://github.com/JosephSearle/milvus-plugin)
