@@ -1,38 +1,31 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
-  "name": "milvus",
-  "displayName": "Milvus",
+  "name": "milvuscraft",
+  "displayName": "MilvusCraft",
   "version": "1.0.0",
-  "description": "12 skills for creating, optimising, managing, debugging, and operating Milvus vector databases. Supports Standard Milvus, IBM Cloud (watsonx.data), and Zilliz Cloud.",
-  "author": { "name": "Joseph Searle" },
-  "repository": "https://github.com/JosephSearle/milvus-plugin",
+  "description": "Production toolkit for senior engineers building with and on Milvus — 12 specialised skills covering connection, schema design, indexing, search optimisation, multi-tenancy, observability, backup/restore, and diagnostics, wired to the official Milvus MCP server.",
+  "author": {
+    "name": "Joseph Searle",
+    "email": "josephwilliamsearle@gmail.com"
+  },
+  "repository": "https://github.com/josephsearle/milvuscraft",
   "license": "MIT",
-  "keywords": ["milvus", "vector-database", "rag", "embeddings"],
+  "keywords": [
+    "milvus",
+    "vector-database",
+    "embeddings",
+    "rag",
+    "semantic-search",
+    "ann",
+    "mcp"
+  ],
+  "defaultEnabled": false,
   "userConfig": {
-    "milvus_uri": {
+    "milvus_mcp_url": {
       "type": "string",
-      "title": "Milvus URI",
-      "description": "Connection URI for your Milvus instance (e.g. http://localhost:19530 or https://host:19530)",
-      "required": true
-    },
-    "milvus_token": {
-      "type": "string",
-      "title": "Milvus Token",
-      "description": "Auth token (username:password for self-hosted, API key for cloud). Leave empty for no-auth dev deployments.",
-      "sensitive": true
-    },
-    "milvus_db": {
-      "type": "string",
-      "title": "Database name",
-      "description": "Milvus database to connect to",
-      "default": "default"
-    },
-    "deployment_profile": {
-      "type": "string",
-      "title": "Deployment profile",
-      "description": "One of: standard (open-source Milvus Lite/Standalone/Distributed), ibm_cloud (watsonx.data), zilliz_cloud, or custom",
-      "required": true,
-      "default": "standard"
+      "title": "Milvus MCP Server URL",
+      "description": "HTTP endpoint of the running Milvus MCP server (mcp-proxy target)",
+      "default": "http://localhost:8000/mcp"
     }
   }
 }

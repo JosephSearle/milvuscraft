@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "milvuscraft",
+  "description": "Production toolkit for senior engineers building with and on Milvus — schema design, indexing, search optimisation, multi-tenancy, observability, backup/restore, and diagnostics wired to the official Milvus MCP server.",
+  "owner": {
+    "name": "Joseph Searle",
+    "url": "https://github.com/josephsearle"
+  },
+  "plugins": [
+    {
+      "name": "milvuscraft",
+      "description": "12 specialised skills covering the complete Milvus development lifecycle — from connection and schema design through data ingestion, index tuning, search optimisation, multi-tenancy, compaction/TTL, observability, backup/restore, and diagnostics. Four specialist agents (architect, engineer, operator, diagnostician) and the official Milvus MCP server wired in.",
+      "source": "./",
+      "category": "developer-tools"
+    }
+  ]
+}
